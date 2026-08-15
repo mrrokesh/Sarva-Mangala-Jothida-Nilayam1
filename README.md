@@ -4,6 +4,8 @@
 
 Traditional Vedic astrology storefront for **Dr. Elangho Thirunavukkarasu** (Mithuna Rishi) in Salem. Tamil and English consultations, life horoscopes, combo reports, online bookings, and GST-inclusive checkout.
 
+The look is **night-sky indigo, temple gold, and parchment**. The home hero uses the professional studio banner of Dr. Elangho — not a generated 3D graphic.
+
 **Astrologer:** Dr. Elangho Thirunavukkarasu — B.Sc., M.A., M.Ed., M.A., M.Phil., M.A., Ph.D. (Astro)  
 **Channel:** Mithuna Rishi Astro Channel  
 **Repository:** [github.com/mrrokesh/Sarva-Mangala-Jothida-Nilayam1](https://github.com/mrrokesh/Sarva-Mangala-Jothida-Nilayam1)
@@ -18,7 +20,7 @@ Traditional Vedic astrology storefront for **Dr. Elangho Thirunavukkarasu** (Mit
 
 ## What the site includes
 
-- Home page with 3D hero, about, experts, awards, gallery, reviews, videos, and FAQ
+- Home page with the professional banner hero, about, experts, awards, gallery, reviews, videos, and FAQ
 - About 90 services across horoscope, consultation, marriage, career, vastu, palmistry, and shop categories
 - Mega menu, birth-detail forms, cart, and 18% GST pricing
 - Razorpay checkout with optional Supabase orders (demo mode works without keys)
@@ -29,7 +31,7 @@ Brand copy, phones, address, awards, and videos are configured in [`src/config/s
 
 ## Stack
 
-React 19, Vite, Tailwind CSS v4, React Router, Zustand, Framer Motion, React Three Fiber, Razorpay, and optional Supabase.
+React 19, Vite, Tailwind CSS v4, React Router, Zustand, Framer Motion, React Three Fiber (mandala accent), Razorpay, and optional Supabase.
 
 ## Local setup
 
@@ -68,7 +70,7 @@ Without keys, cart and checkout still work in **demo mode** (orders are saved to
 
 ## Brand edits
 
-Change name, phones, address, awards, and videos in `src/config/site.js`. Replace `public/logo.jpg` for the header mark.
+Change name, phones, address, awards, and videos in `src/config/site.js`. Replace `public/logo.jpg` for the header mark and `public/images/brand/professional-banner.png` for the home hero.
 
 ## Credit
 

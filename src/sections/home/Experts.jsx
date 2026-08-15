@@ -14,13 +14,6 @@ export default function Experts() {
             English.
           </p>
         </SectionHeading>
-        <div className="mb-8 overflow-hidden rounded-2xl border border-maroon/15 shadow-xl">
-          <img
-            src={site.banner}
-            alt={`${site.name} — ${site.founder}`}
-            className="w-full object-cover object-center"
-          />
-        </div>
         <h3 className="mb-4 text-center font-display text-2xl text-navy">Best Astrologer in Salem — Traditional Jyotish</h3>
         <p className="mb-8 text-center leading-relaxed text-navy/70">
           If you want a traditional Tamil jyotisha reading with academic training behind it, book a consultation with{' '}

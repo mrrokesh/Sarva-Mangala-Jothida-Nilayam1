@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40">
-      <div className="bg-navy text-gold">
+      <div className="border-b border-gold/15 bg-cream text-maroon">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-1.5 text-xs">
           <a href={`tel:${site.phones[0].replace(/\s/g, '')}`} className="inline-flex items-center gap-1 hover:opacity-80">
             <Phone size={12} /> {site.phones.join(' / ')}
