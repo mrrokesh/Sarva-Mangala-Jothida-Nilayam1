@@ -1,20 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Menu, Search, ShoppingBag, Phone } from 'lucide-react'
+import { Menu, Phone } from 'lucide-react'
 import { site } from '../../config/site'
 import { navItems } from '../../data/nav'
-import { useCart } from '../../store/cartStore'
 import { DesktopMega, MobileMenu } from './MegaMenu'
-import SearchOverlay from './SearchOverlay'
+import Button from '../ui/Button'
 
 export default function Header() {
-  const count = useCart((s) => s.items.reduce((n, i) => n + i.qty, 0))
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [searchOpen, setSearchOpen] = useState(false)
+  const [hideTop, setHideTop] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setHideTop(window.scrollY > 16)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <header className="sticky top-0 z-40">
-      <div className="border-b border-gold/15 bg-cream text-maroon">
+      <div
+        className={`overflow-hidden border-gold/15 bg-cream text-maroon transition-all duration-300 ${
+          hideTop ? 'max-h-0 border-b-0 opacity-0' : 'max-h-12 border-b opacity-100'
+        }`}
+      >
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-1.5 text-xs">
           <a href={`tel:${site.phones[0].replace(/\s/g, '')}`} className="inline-flex items-center gap-1 hover:opacity-80">
             <Phone size={12} /> {site.phones.join(' / ')}
@@ -44,19 +53,9 @@ export default function Header() {
               <span className="hidden truncate text-[11px] text-navy/60 sm:block">{site.founder}</span>
             </span>
           </Link>
-          <div className="ml-auto flex items-center gap-3">
-            <button type="button" onClick={() => setSearchOpen(true)} aria-label="Search" className="hover:text-gold">
-              <Search size={20} />
-            </button>
-            <Link to="/cart" className="relative hover:text-gold" aria-label="Cart">
-              <ShoppingBag size={20} />
-              {count > 0 && (
-                <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-navy">
-                  {count}
-                </span>
-              )}
-            </Link>
-          </div>
+          <Button to="/enquiry" variant="outline" className="ml-auto shrink-0 !px-4 !py-2 text-xs sm:!px-6 sm:!py-2.5 sm:text-sm">
+            Book a Consultation
+          </Button>
         </div>
         <nav className="hidden border-t border-gold/15 lg:block">
           <ul className="mx-auto flex max-w-7xl items-stretch gap-0 px-2 text-[13px] font-medium">
@@ -96,7 +95,6 @@ export default function Header() {
         </nav>
       </div>
       <MobileMenu items={navItems} open={mobileOpen} onClose={() => setMobileOpen(false)} />
-      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   )
 }
