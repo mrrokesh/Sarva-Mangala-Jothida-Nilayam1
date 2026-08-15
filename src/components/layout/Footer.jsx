@@ -34,16 +34,16 @@ const footerGroups = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-maroon/10 bg-white text-navy">
+    <footer className="border-t border-gold/20 bg-navy text-cream">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4">
         {footerGroups.map((g) => (
           <div key={g.title}>
-            <h3 className="mb-4 font-display text-xl text-maroon">{g.title}</h3>
+            <h3 className="mb-4 font-display text-xl text-gold">{g.title}</h3>
             {g.slugs.map((slug) => {
               const p = products.find((x) => x.slug === slug)
               if (!p) return null
               return (
-                <ServiceLink key={slug} to={`/services/${slug}`}>
+                <ServiceLink key={slug} to={`/services/${slug}`} className="text-cream/70 hover:text-gold">
                   {p.title}
                 </ServiceLink>
               )
@@ -51,13 +51,13 @@ export default function Footer() {
           </div>
         ))}
         <div>
-          <h3 className="mb-4 font-display text-xl text-maroon">Follow us</h3>
-          <p className="text-sm text-navy/70">{site.channel}</p>
-          <p className="text-xs text-navy/50">{site.channelTamil}</p>
-          <h3 className="mb-4 mt-8 font-display text-xl text-maroon">Contact Us</h3>
-          <p className="mb-2 text-sm text-maroon">{site.founder}</p>
+          <h3 className="mb-4 font-display text-xl text-gold">Follow us</h3>
+          <p className="text-sm text-cream/70">{site.channel}</p>
+          <p className="text-xs text-cream/50">{site.channelTamil}</p>
+          <h3 className="mb-4 mt-8 font-display text-xl text-gold">Contact Us</h3>
+          <p className="mb-2 text-sm text-gold">{site.founder}</p>
           {site.address.map((line) => (
-            <p key={line} className="text-sm text-navy/70">
+            <p key={line} className="text-sm text-cream/70">
               {line}
             </p>
           ))}
@@ -65,23 +65,23 @@ export default function Footer() {
           {site.email && <p className="text-sm">{site.email}</p>}
         </div>
         <div>
-          <h3 className="mb-4 font-display text-xl text-maroon">Important Links</h3>
-          <ServiceLink to="/privacy">Privacy Policy</ServiceLink>
-          <ServiceLink to="/terms">Terms & Conditions</ServiceLink>
-          <ServiceLink to="/cancellations">Cancellations Conditions</ServiceLink>
-          <ServiceLink to="/shop">Shop</ServiceLink>
-          <ServiceLink to="/blog">Blog</ServiceLink>
-          <h3 className="mb-4 mt-8 font-display text-xl text-maroon">Reach Us</h3>
-          <a href={`tel:${site.phones[0].replace(/\s/g, '')}`} className="font-semibold text-maroon">
+          <h3 className="mb-4 font-display text-xl text-gold">Important Links</h3>
+          <ServiceLink to="/privacy" className="text-cream/70 hover:text-gold">Privacy Policy</ServiceLink>
+          <ServiceLink to="/terms" className="text-cream/70 hover:text-gold">Terms & Conditions</ServiceLink>
+          <ServiceLink to="/cancellations" className="text-cream/70 hover:text-gold">Cancellations Conditions</ServiceLink>
+          <ServiceLink to="/shop" className="text-cream/70 hover:text-gold">Shop</ServiceLink>
+          <ServiceLink to="/blog" className="text-cream/70 hover:text-gold">Blog</ServiceLink>
+          <h3 className="mb-4 mt-8 font-display text-xl text-gold">Reach Us</h3>
+          <a href={`tel:${site.phones[0].replace(/\s/g, '')}`} className="font-semibold text-gold">
             Call us Now
           </a>
         </div>
       </div>
-      <div className="border-t border-maroon/10 py-4 text-center text-xs text-navy/50">
+      <div className="border-t border-gold/15 py-4 text-center text-xs text-cream/50">
         © {new Date().getFullYear()} {site.name} · {site.founder}. All rights reserved.
         {' · '}
         Developed by{' '}
-        <a href="https://mrrokesh.com" target="_blank" rel="noreferrer" className="text-maroon hover:underline">
+        <a href="https://mrrokesh.com" target="_blank" rel="noreferrer" className="text-gold hover:underline">
           MR_ROKESH
         </a>
       </div>

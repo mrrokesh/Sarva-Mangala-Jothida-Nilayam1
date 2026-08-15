@@ -8,7 +8,7 @@ export default function Blog() {
       <SectionHeading eyebrow="Journal" title="Blog" />
       <div className="space-y-8">
         {posts.map((p) => (
-          <article key={p.slug} className="rounded-2xl border border-navy/10 bg-white p-6">
+          <article key={p.slug} className="rounded-2xl border border-gold/20 bg-cream p-6">
             <p className="text-xs uppercase tracking-wide text-maroon">
               {new Date(p.date).toLocaleDateString('en-IN', { dateStyle: 'long' })}
             </p>

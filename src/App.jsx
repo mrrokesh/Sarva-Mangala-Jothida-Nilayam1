@@ -16,7 +16,7 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 
 function Fallback() {
   return (
-    <div className="flex min-h-[50vh] items-center justify-center bg-white font-display text-xl text-maroon">
+    <div className="flex min-h-[50vh] items-center justify-center bg-navy-soft font-display text-xl text-gold">
       Loading…
     </div>
   )

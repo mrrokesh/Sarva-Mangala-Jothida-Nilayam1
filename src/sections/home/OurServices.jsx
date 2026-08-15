@@ -4,7 +4,7 @@ import { featuredServices } from '../../data/products'
 
 export default function OurServices() {
   return (
-    <section className="star-grid bg-white px-4 py-16">
+    <section className="star-grid bg-cream px-4 py-16">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="Offerings" title="Our Services">
           <p>

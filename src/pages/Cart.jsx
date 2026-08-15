@@ -24,9 +24,9 @@ export default function Cart() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-14">
       <h1 className="font-display text-4xl">Cart</h1>
-      <div className="mt-8 overflow-x-auto rounded-2xl border border-navy/10 bg-white">
+      <div className="mt-8 overflow-x-auto rounded-2xl border border-gold/20 bg-cream">
         <table className="w-full text-left text-sm">
-          <thead className="bg-maroon text-white">
+          <thead className="bg-navy text-gold">
             <tr>
               <th className="px-4 py-3">Service</th>
               <th className="px-4 py-3">Birth details</th>
@@ -39,7 +39,7 @@ export default function Cart() {
             {items.map((item) => (
               <tr key={item.cartId} className="border-t border-navy/10 align-top">
                 <td className="px-4 py-4">
-                  <Link to={`/services/${item.slug}`} className="font-semibold hover:text-maroon">
+                  <Link to={`/services/${item.slug}`} className="font-semibold hover:text-gold">
                     {item.title}
                   </Link>
                   <p className="text-navy/60">{formatInr(totalWithGst(item.price))} incl. GST</p>
@@ -68,7 +68,7 @@ export default function Cart() {
                 </td>
                 <td className="px-4 py-4 font-semibold">{formatInr(totalWithGst(item.price) * item.qty)}</td>
                 <td className="px-4 py-4">
-                  <button type="button" className="text-maroon" onClick={() => removeItem(item.cartId)}>
+                  <button type="button" className="text-gold" onClick={() => removeItem(item.cartId)}>
                     Remove
                   </button>
                 </td>

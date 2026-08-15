@@ -4,7 +4,7 @@ import CardTilt from '../../components/three/CardTilt'
 
 export default function Awards() {
   return (
-    <section className="bg-[#fff8f5] px-4 py-16">
+    <section className="bg-navy-soft px-4 py-16">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="Honours" title="Awards & Qualifications">
           <p>
@@ -15,10 +15,10 @@ export default function Awards() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {site.awards.map((a) => (
             <CardTilt key={a.src}>
-              <article className="h-full overflow-hidden rounded-2xl border border-maroon/15 bg-white">
+              <article className="h-full overflow-hidden rounded-2xl border border-gold/20 bg-cream">
                 <img src={a.src} alt={a.title} className="h-52 w-full object-cover object-top" />
                 <div className="p-4">
-                  <p className="text-xs uppercase tracking-wide text-maroon">{a.year}</p>
+                  <p className="text-xs uppercase tracking-wide text-gold">{a.year}</p>
                   <h3 className="mt-1 font-display text-lg text-navy">{a.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-navy/65">{a.detail}</p>
                 </div>

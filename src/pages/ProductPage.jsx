@@ -78,8 +78,8 @@ export default function ProductPage() {
 
   return (
     <div className="bg-cream">
-      <div className="bg-[#fff8f5] py-16 text-center text-navy">
-        <p className="text-xs uppercase tracking-[0.3em] text-maroon">Service</p>
+      <div className="bg-navy-soft py-16 text-center text-navy">
+        <p className="text-xs uppercase tracking-[0.3em] text-gold">Service</p>
         <h1 className="mt-3 font-display text-4xl md:text-5xl">{product.title}</h1>
         <p className="mx-auto mt-4 max-w-2xl text-navy/70">{product.excerpt}</p>
         <Button className="mt-6" onClick={() => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -89,14 +89,14 @@ export default function ProductPage() {
 
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 lg:grid-cols-2">
         <CardTilt>
-          <div className="overflow-hidden rounded-2xl border border-maroon/15 shadow-xl">
+          <div className="overflow-hidden rounded-2xl border border-gold/20 shadow-xl">
             <ProductArt category={product.category} title={product.title} />
           </div>
         </CardTilt>
         <div>
           <h2 className="font-display text-2xl text-navy">Your complete reading</h2>
           <p className="mt-4 leading-relaxed text-navy/75">{product.description}</p>
-          <button type="button" className="mt-3 font-semibold text-maroon" onClick={() => setOpen((v) => !v)}>
+          <button type="button" className="mt-3 font-semibold text-gold" onClick={() => setOpen((v) => !v)}>
             {open ? 'Read Less' : 'Read More'}
           </button>
           {open && (
@@ -108,12 +108,12 @@ export default function ProductPage() {
         </div>
       </div>
 
-      <div id="order" className="bg-[#fff8f5] px-4 py-14 text-navy">
-        <form onSubmit={onAdd} className="mx-auto max-w-3xl rounded-2xl border border-maroon/15 bg-white p-6 md:p-10">
+      <div id="order" className="bg-navy-soft px-4 py-14 text-navy">
+        <form onSubmit={onAdd} className="mx-auto max-w-3xl rounded-2xl border border-gold/20 bg-cream p-6 md:p-10">
           <h2 className="font-display text-3xl">
             {product.requiresBirthDetails ? 'Enter Your Birth Details' : 'Add to cart'}
           </h2>
-          <p className="mt-2 font-semibold text-maroon">{gstLine(product.price)}</p>
+          <p className="mt-2 font-semibold text-gold">{gstLine(product.price)}</p>
 
           {product.requiresBirthDetails && (
             <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -151,7 +151,7 @@ export default function ProductPage() {
               <Field label="Mobile No.*" value={birth.mobile} onChange={(v) => setField('mobile', v)} />
               {needsMatch && (
                 <>
-                  <p className="mt-2 font-display text-lg text-maroon md:col-span-2">Partner details (for matching)</p>
+                  <p className="mt-2 font-display text-lg text-gold md:col-span-2">Partner details (for matching)</p>
                   <Field label="Partner Name" value={birth.partnerName} onChange={(v) => setField('partnerName', v)} />
                   <Field label="Partner Date of Birth" type="date" value={birth.partnerDob} onChange={(v) => setField('partnerDob', v)} />
                   <Field label="Partner Time of Birth" type="time" value={birth.partnerTob} onChange={(v) => setField('partnerTob', v)} />
@@ -166,7 +166,7 @@ export default function ProductPage() {
                   className="mt-1"
                 />
                 Accept the{' '}
-                <Link to="/terms" className="text-maroon underline">
+                <Link to="/terms" className="text-gold underline">
                   terms & conditions
                 </Link>
               </label>
@@ -189,8 +189,8 @@ export default function ProductPage() {
             5 working days. Answers are live recordings — not computer generated.
           </p>
         </div>
-        <div className="rounded-2xl border border-maroon/15 bg-[#fff8f5] p-6 text-navy">
-          <h3 className="font-display text-2xl text-maroon">After payment</h3>
+        <div className="rounded-2xl border border-gold/20 bg-navy-soft p-6 text-navy">
+          <h3 className="font-display text-2xl text-gold">After payment</h3>
           <p className="mt-3 leading-relaxed text-navy/70">
             Pay securely with Razorpay (UPI, cards, netbanking). Keep your order reference. Our coordinators will confirm
             on WhatsApp if any birth detail is unclear.
@@ -199,7 +199,7 @@ export default function ProductPage() {
       </div>
 
       {related.length > 0 && (
-        <div className="bg-white px-4 py-14">
+        <div className="bg-cream px-4 py-14">
           <h3 className="mb-8 text-center font-display text-3xl text-navy">You may also like</h3>
           <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (

@@ -10,21 +10,21 @@ export default function AboutUs() {
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   return (
-    <section className="bg-[#fff8f5] px-4 py-16 text-navy">
+    <section className="bg-navy-soft px-4 py-16 text-navy">
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
         <div className="relative">
-          <div className="overflow-hidden rounded-2xl border border-maroon/15 shadow-xl shadow-maroon/10">
+          <div className="overflow-hidden rounded-2xl border border-gold/25 shadow-xl shadow-navy/10">
             <img
               src={site.portrait}
               alt={site.founder}
               className="aspect-[4/5] w-full object-cover object-[center_15%]"
             />
           </div>
-          <div className="absolute -bottom-4 -right-4 hidden h-36 w-36 overflow-hidden rounded-2xl border border-maroon/20 lg:block">
+          <div className="absolute -bottom-4 -right-4 hidden h-36 w-36 overflow-hidden rounded-2xl border border-gold/30 lg:block">
             {reduced ? (
-              <div className="h-full bg-[#fff8f5] star-grid" />
+              <div className="h-full bg-navy star-grid" />
             ) : (
-              <Suspense fallback={<div className="h-full bg-[#fff8f5]" />}>
+              <Suspense fallback={<div className="h-full bg-navy" />}>
                 <MandalaScene />
               </Suspense>
             )}

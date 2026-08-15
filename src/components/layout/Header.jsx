@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40">
-      <div className="bg-maroon text-white">
+      <div className="bg-navy text-gold">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-1.5 text-xs">
           <a href={`tel:${site.phones[0].replace(/\s/g, '')}`} className="inline-flex items-center gap-1 hover:opacity-80">
             <Phone size={12} /> {site.phones.join(' / ')}
@@ -28,7 +28,7 @@ export default function Header() {
           )}
         </div>
       </div>
-      <div className="border-b border-maroon/10 bg-white/95 text-navy backdrop-blur">
+      <div className="border-b border-gold/20 bg-cream/95 text-navy backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3">
           <button type="button" className="lg:hidden" onClick={() => setMobileOpen(true)} aria-label="Open menu">
             <Menu />
@@ -37,7 +37,7 @@ export default function Header() {
             <img
               src={site.portrait}
               alt={site.founder}
-              className="h-11 w-11 rounded-full border border-maroon/30 object-cover object-[center_18%]"
+              className="h-11 w-11 rounded-full border border-gold/40 object-cover object-[center_18%]"
             />
             <span className="min-w-0">
               <span className="block truncate font-display text-base leading-tight text-maroon sm:text-lg">{site.name}</span>
@@ -45,20 +45,20 @@ export default function Header() {
             </span>
           </Link>
           <div className="ml-auto flex items-center gap-3">
-            <button type="button" onClick={() => setSearchOpen(true)} aria-label="Search" className="hover:text-maroon">
+            <button type="button" onClick={() => setSearchOpen(true)} aria-label="Search" className="hover:text-gold">
               <Search size={20} />
             </button>
-            <Link to="/cart" className="relative hover:text-maroon" aria-label="Cart">
+            <Link to="/cart" className="relative hover:text-gold" aria-label="Cart">
               <ShoppingBag size={20} />
               {count > 0 && (
-                <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-maroon px-1 text-[10px] font-bold text-white">
+                <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-navy">
                   {count}
                 </span>
               )}
             </Link>
           </div>
         </div>
-        <nav className="hidden border-t border-maroon/10 lg:block">
+        <nav className="hidden border-t border-gold/15 lg:block">
           <ul className="mx-auto flex max-w-7xl items-stretch gap-0 px-2 text-[13px] font-medium">
             {navItems.map((item) => (
               <li key={item.label} className="group relative">
@@ -66,7 +66,7 @@ export default function Header() {
                   <NavLink
                     to={item.to}
                     className={({ isActive }) =>
-                      `block whitespace-nowrap px-3 py-3 hover:text-maroon ${isActive ? 'text-maroon' : ''}`
+                      `block whitespace-nowrap px-3 py-3 hover:text-gold ${isActive ? 'text-gold' : ''}`
                     }
                   >
                     {item.label}
@@ -77,13 +77,13 @@ export default function Header() {
                       <NavLink
                         to={item.to}
                         className={({ isActive }) =>
-                          `flex cursor-pointer items-center whitespace-nowrap px-3 py-3 hover:text-maroon ${isActive ? 'text-maroon' : ''}`
+                          `flex cursor-pointer items-center whitespace-nowrap px-3 py-3 hover:text-gold ${isActive ? 'text-gold' : ''}`
                         }
                       >
                         {item.label}
                       </NavLink>
                     ) : (
-                      <span className="flex cursor-default items-center whitespace-nowrap px-3 py-3 hover:text-maroon">
+                      <span className="flex cursor-default items-center whitespace-nowrap px-3 py-3 hover:text-gold">
                         {item.label}
                       </span>
                     )}

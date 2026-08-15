@@ -8,7 +8,7 @@ function ItemLink({ item, onNavigate }) {
     <Link
       to={item.to}
       onClick={onNavigate}
-      className="flex items-center justify-between gap-2 px-4 py-2 text-sm text-navy/80 hover:bg-maroon/8 hover:text-maroon"
+      className="flex items-center justify-between gap-2 px-4 py-2 text-sm text-navy/80 hover:bg-gold/10 hover:text-gold"
     >
       <span>
         {item.label}
@@ -20,11 +20,11 @@ function ItemLink({ item, onNavigate }) {
 
 function DesktopSub({ items, onNavigate }) {
   return (
-    <div className="absolute left-full top-0 z-50 max-h-[70vh] min-w-72 overflow-y-auto rounded-md border border-maroon/15 bg-white py-2 shadow-2xl">
+    <div className="absolute left-full top-0 z-50 max-h-[70vh] min-w-72 overflow-y-auto rounded-md border border-gold/20 bg-cream py-2 shadow-2xl">
       {items.map((item) =>
         item.children ? (
           <div key={item.label} className="group/sub relative">
-            <p className="flex items-center justify-between px-4 py-2 text-sm font-semibold text-maroon">
+            <p className="flex items-center justify-between px-4 py-2 text-sm font-semibold text-gold">
               {item.label}
               <ChevronRight size={14} />
             </p>
@@ -42,11 +42,11 @@ function DesktopSub({ items, onNavigate }) {
 
 export function DesktopMega({ items, onNavigate }) {
   return (
-    <div className="invisible absolute left-0 top-full z-50 max-h-[75vh] min-w-80 overflow-y-auto rounded-md border border-maroon/15 bg-white py-2 opacity-0 shadow-2xl group-hover:visible group-hover:opacity-100">
+    <div className="invisible absolute left-0 top-full z-50 max-h-[75vh] min-w-80 overflow-y-auto rounded-md border border-gold/20 bg-cream py-2 opacity-0 shadow-2xl group-hover:visible group-hover:opacity-100">
       {items.map((item) =>
         item.children ? (
           <div key={item.label} className="group/mid relative">
-            <p className="flex items-center justify-between px-4 py-2 text-sm font-semibold uppercase tracking-wide text-maroon">
+            <p className="flex items-center justify-between px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gold">
               {item.label}
               <ChevronRight size={14} />
             </p>
@@ -75,13 +75,13 @@ export function MobileMenu({ items, open, onClose }) {
   return (
     <div className="fixed inset-0 z-50 lg:hidden">
       <button className="absolute inset-0 bg-navy/40" onClick={onClose} aria-label="Close menu" />
-      <div className="absolute inset-y-0 left-0 flex w-[86%] max-w-sm flex-col bg-white text-navy shadow-2xl">
-        <div className="flex items-center gap-2 border-b border-maroon/10 px-4 py-4">
+      <div className="absolute inset-y-0 left-0 flex w-[86%] max-w-sm flex-col bg-cream text-navy shadow-2xl">
+        <div className="flex items-center gap-2 border-b border-gold/20 px-4 py-4">
           {stack.length > 1 && (
             <button
               type="button"
               onClick={() => setStack((s) => s.slice(0, -1))}
-              className="flex items-center gap-1 text-maroon"
+              className="flex items-center gap-1 text-gold"
             >
               <ChevronLeft size={18} /> Back
             </button>
@@ -97,18 +97,18 @@ export function MobileMenu({ items, open, onClose }) {
               <button
                 key={item.label}
                 type="button"
-                className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-maroon/5"
+                className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-gold/10"
                 onClick={() => setStack((s) => [...s, { title: item.label, items: item.children }])}
               >
                 {item.label}
-                <ChevronRight size={16} className="text-maroon" />
+                <ChevronRight size={16} className="text-gold" />
               </button>
             ) : (
               <Link
                 key={item.label + item.to}
                 to={item.to}
                 onClick={onClose}
-                className="flex items-center justify-between px-4 py-3 hover:bg-maroon/5"
+                className="flex items-center justify-between px-4 py-3 hover:bg-gold/10"
               >
                 <span>
                   {item.label}

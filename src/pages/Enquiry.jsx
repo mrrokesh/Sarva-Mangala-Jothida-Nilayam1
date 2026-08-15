@@ -57,9 +57,9 @@ export default function Enquiry() {
   }
 
   return (
-    <div className="bg-white text-navy">
+    <div className="bg-cream text-navy">
       <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-maroon">{site.nameTamil}</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-gold">{site.nameTamil}</p>
         <h1 className="mt-3 font-display text-4xl md:text-5xl">Consult {site.founder}</h1>
         <p className="mt-4 text-navy/70">
           {site.honorific} · {site.degrees}. Share your birth details for a personalised reading on love, career, and
@@ -67,7 +67,7 @@ export default function Enquiry() {
         </p>
         <p className="mt-2 text-sm text-maroon">{site.address[2]}</p>
       </div>
-      <div className="bg-[#fff8f5] px-4 py-14 text-navy">
+      <div className="bg-navy-soft px-4 py-14 text-navy">
         <div className="mx-auto max-w-xl">
           <SectionHeading title="What you’ll get" />
           <ul className="mb-8 list-disc space-y-2 pl-5 text-navy/75">
@@ -76,7 +76,7 @@ export default function Enquiry() {
             <li>Career and financial growth predictions</li>
             <li>Remedies to work with current dasa challenges</li>
           </ul>
-          <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border border-navy/10 bg-white p-6">
+          <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border border-gold/20 bg-cream p-6">
             <Field label="Full Name" value={form.fullName} onChange={(v) => setField('fullName', v)} />
             <Field label="Date of Birth" type="date" value={form.dob} onChange={(v) => setField('dob', v)} />
             <label className="text-sm">

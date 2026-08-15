@@ -16,9 +16,9 @@ export default function SearchOverlay({ open, onClose }) {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center bg-navy/40 p-4 pt-24">
-      <div className="w-full max-w-2xl rounded-2xl border border-maroon/15 bg-white p-4 shadow-2xl">
+      <div className="w-full max-w-2xl rounded-2xl border border-gold/20 bg-cream p-4 shadow-2xl">
         <div className="flex items-center gap-2 border-b border-navy/10 pb-3">
-          <Search size={18} className="text-maroon" />
+          <Search size={18} className="text-gold" />
           <input
             autoFocus
             value={q}
@@ -41,7 +41,7 @@ export default function SearchOverlay({ open, onClose }) {
               className="flex items-center justify-between gap-3 rounded-lg px-3 py-2 hover:bg-cream-dark"
             >
               <span className="text-sm">{p.title}</span>
-              <span className="text-sm text-maroon">{formatInr(totalWithGst(p.price))}</span>
+              <span className="text-sm text-gold">{formatInr(totalWithGst(p.price))}</span>
             </Link>
           ))}
         </div>

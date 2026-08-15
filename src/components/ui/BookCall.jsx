@@ -17,7 +17,7 @@ export default function BookCall({ className = '' }) {
 
 export function NewTag() {
   return (
-    <span className="ml-2 inline-flex rounded bg-maroon px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+    <span className="ml-2 inline-flex rounded bg-gold px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-navy">
       New
     </span>
   )
@@ -55,9 +55,9 @@ export function ProductArt({ category, title, src }) {
   )
 }
 
-export function ServiceLink({ to, children }) {
+export function ServiceLink({ to, children, className = 'text-navy/70 hover:text-gold' }) {
   return (
-    <Link to={to} className="block py-1 text-sm text-navy/70 transition hover:text-maroon">
+    <Link to={to} className={`block py-1 text-sm transition ${className}`}>
       {children}
     </Link>
   )

@@ -17,7 +17,7 @@ export default function Shop() {
           <p>Spiritual products to complement your consultation — karungali, pyramids, rudraksha, and gemstones.</p>
         </SectionHeading>
         <div className="mb-10 flex flex-wrap justify-center gap-2">
-          <Button to="/shop" variant={category ? 'outline' : 'gold'} className="!text-navy border-maroon">
+          <Button to="/shop" variant={category ? 'outline' : 'gold'}>
             All
           </Button>
           {shopCategories.map((c) => (
@@ -25,7 +25,6 @@ export default function Shop() {
               key={c.slug}
               to={`/shop/${c.slug}`}
               variant={category === c.slug ? 'gold' : 'outline'}
-              className={category === c.slug ? '' : '!border-maroon !text-navy hover:!bg-maroon hover:!text-white'}
             >
               {c.label}
             </Button>

@@ -65,7 +65,7 @@ export default function Checkout() {
 
   return (
     <div className="mx-auto grid max-w-5xl gap-10 px-4 py-14 lg:grid-cols-2">
-      <form onSubmit={onPay} className="rounded-2xl border border-navy/10 bg-white p-6">
+      <form onSubmit={onPay} className="rounded-2xl border border-gold/20 bg-cream p-6">
         <h1 className="font-display text-3xl">Checkout</h1>
         {!hasRazorpay && (
           <p className="mt-4 rounded-lg bg-maroon/10 px-3 py-2 text-sm">
@@ -86,7 +86,7 @@ export default function Checkout() {
           {busy ? 'Please wait…' : `Pay ${formatInr(subtotal)}`}
         </Button>
       </form>
-      <aside className="rounded-2xl border border-maroon/15 bg-[#fff8f5] p-6 text-navy">
+      <aside className="rounded-2xl border border-maroon/15 bg-navy-soft p-6 text-navy">
         <h2 className="font-display text-2xl text-maroon">Order summary</h2>
         <ul className="mt-4 space-y-3 text-sm">
           {items.map((i) => (

@@ -11,7 +11,7 @@ export default function FAQ() {
         <SectionHeading title="FAQs" />
         <div className="space-y-3">
           {faqs.map((f, i) => (
-            <div key={f.q} className="rounded-xl border border-navy/10 bg-white">
+            <div key={f.q} className="rounded-xl border border-gold/20 bg-cream">
               <button
                 type="button"
                 className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold"

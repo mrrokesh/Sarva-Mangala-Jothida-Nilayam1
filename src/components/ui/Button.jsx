@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
 const variants = {
-  gold: 'bg-maroon text-white hover:bg-maroon-deep',
-  maroon: 'bg-maroon text-white hover:bg-maroon-deep',
-  outline: 'border border-maroon text-maroon hover:bg-maroon hover:text-white',
-  cream: 'bg-cream-dark text-navy hover:bg-cream-dark',
+  gold: 'bg-gold text-navy hover:bg-gold-light',
+  maroon: 'bg-maroon text-cream hover:bg-maroon-deep',
+  outline: 'border border-gold text-gold hover:bg-gold hover:text-navy',
+  cream: 'bg-cream-dark text-navy hover:bg-cream',
 }
 
 export default function Button({

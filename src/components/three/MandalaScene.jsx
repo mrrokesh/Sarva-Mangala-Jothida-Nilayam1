@@ -14,15 +14,15 @@ function Mandala() {
     <group>
       <mesh ref={outer} rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.6, 0.03, 12, 64]} />
-        <meshStandardMaterial color="#8b2332" metalness={0.7} roughness={0.25} />
+        <meshStandardMaterial color="#c9a227" metalness={0.7} roughness={0.25} />
       </mesh>
       <mesh ref={mid} rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.1, 0.02, 12, 64]} />
-        <meshStandardMaterial color="#b4532a" metalness={0.65} roughness={0.28} />
+        <meshStandardMaterial color="#e4c76a" metalness={0.65} roughness={0.28} />
       </mesh>
       <mesh ref={inner}>
         <octahedronGeometry args={[0.45, 0]} />
-        <meshStandardMaterial color="#8b2332" metalness={0.5} roughness={0.25} emissive="#b4532a" emissiveIntensity={0.16} />
+        <meshStandardMaterial color="#1e3a5f" metalness={0.5} roughness={0.25} emissive="#c9a227" emissiveIntensity={0.16} />
       </mesh>
     </group>
   )
@@ -30,11 +30,11 @@ function Mandala() {
 
 export default function MandalaScene() {
   return (
-    <div className="h-72 w-full min-h-[280px] overflow-hidden rounded-2xl bg-[#fff8f5] md:h-full">
+    <div className="h-72 w-full min-h-[280px] overflow-hidden rounded-2xl bg-navy md:h-full">
       <Canvas camera={{ position: [0, 0, 4.2], fov: 45 }} dpr={[1, 1.5]}>
-        <color attach="background" args={['#fff8f5']} />
-        <ambientLight intensity={0.85} />
-        <pointLight position={[3, 2, 4]} intensity={1.1} color="#b4532a" />
+        <color attach="background" args={['#0b1220']} />
+        <ambientLight intensity={0.55} />
+        <pointLight position={[3, 2, 4]} intensity={1.1} color="#e4c76a" />
         <Suspense fallback={null}>
           <Mandala />
         </Suspense>

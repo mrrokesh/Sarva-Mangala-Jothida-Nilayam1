@@ -36,16 +36,16 @@ export default function Hero() {
   }, [reduced])
 
   return (
-    <section className="relative min-h-[88vh] overflow-hidden bg-[#fff8f5] text-navy">
+    <section className="relative min-h-[88vh] overflow-hidden bg-navy text-cream">
       {!reduced && (
-        <Suspense fallback={<div className="absolute inset-0 bg-[#fff8f5]" />}>
+        <Suspense fallback={<div className="absolute inset-0 bg-navy" />}>
           <HeroScene />
         </Suspense>
       )}
-      {reduced && <div className="absolute inset-0 star-grid bg-[#fff8f5]" />}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/55 to-white" />
+      {reduced && <div className="absolute inset-0 star-grid bg-navy" />}
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/35 via-navy/55 to-navy-soft" />
       <div className="relative mx-auto flex min-h-[88vh] max-w-5xl flex-col items-center justify-center px-4 py-24 text-center">
-        <p className="text-xs uppercase tracking-[0.35em] text-maroon">{site.tagline}</p>
+        <p className="text-xs uppercase tracking-[0.35em] text-gold">{site.tagline}</p>
         <AnimatePresence mode="wait">
           <motion.div
             key={i}
@@ -55,7 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.45 }}
           >
             <h1 className="mt-4 font-display text-4xl md:text-6xl gold-text">{slides[i].title}</h1>
-            <p className="mx-auto mt-5 max-w-2xl text-navy/70">{slides[i].subtitle}</p>
+            <p className="mx-auto mt-5 max-w-2xl text-cream/75">{slides[i].subtitle}</p>
           </motion.div>
         </AnimatePresence>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -71,7 +71,7 @@ export default function Hero() {
               type="button"
               aria-label={`Slide ${idx + 1}`}
               onClick={() => setI(idx)}
-              className={`h-2 w-8 rounded-full ${idx === i ? 'bg-maroon' : 'bg-maroon/20'}`}
+              className={`h-2 w-8 rounded-full ${idx === i ? 'bg-gold' : 'bg-gold/25'}`}
             />
           ))}
         </div>
